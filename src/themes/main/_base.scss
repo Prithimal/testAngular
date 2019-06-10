@@ -1,0 +1,222 @@
+// variables
+*:root {
+  --sidebar-width: 26rem;
+  --color-1: #5155cc;
+  --color-2: #686de0;
+  --color-3: #ecf0f1;
+  --color-4: #ffffff;
+  --color-5: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'George Rounded', serif;
+  font-size: 1.6rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: var(--color-3);
+}
+
+// sidebar
+.sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background-color: var(--color-4);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__brand {
+    height: 8rem;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    background-color: var(--color-3);
+
+    ion-icon {
+      font-size: 3rem;
+      margin-right: 1rem;
+      color: var(--color-1);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+  }
+
+  &__menu-title {
+    padding: 2.4rem 3rem;
+    opacity: .4;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    list-style: none;
+  }
+  
+  &__link {
+    padding: 2rem 3rem;
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-5);
+    display: flex;
+    align-items: center;
+    border-left: 4px solid transparent;
+
+    ion-icon {
+      font-size: 2rem;
+      margin-right: 2rem;
+    }
+
+    &--active {
+      color: var(--color-1);
+      background-color: rgba(#686de0, .3);
+      border-color: currentColor;
+    }
+    
+    &:hover {
+      background-color: rgba(#686de0, .1);
+      &.sidebar__link--active {
+        background-color: rgba(#686de0, .3);
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: auto;
+    padding: 3rem;
+    text-align: center;
+  }
+
+  &__social {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+
+    ion-icon {
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-1);
+      }
+
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+    }
+  }
+
+  &__copyrights {
+    font-size: 1.3rem;
+    opacity: .7;
+    line-height: 1.6;
+  }
+}
+
+// search box
+.search {
+  height: 8rem;
+  width: 100%;
+  background-color: var(--color-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  
+  &__field {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    
+    ion-icon {
+      font-size: 2rem;
+      margin-right: 2rem;
+    }
+  }
+  
+  &__text {
+    width: 100%;
+    border: 0;
+    margin-right: 2rem;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: bold;
+    outline: none;
+  }
+
+  &__filters {
+    display: flex;
+    align-items: center;
+
+    ion-icon {
+      font-size: 2rem;
+      margin-right: 2rem;
+    }
+  }
+}
+
+// avatar img
+.avatar {
+  width: 4rem;
+  height: 4rem;
+  background-image: linear-gradient(to right bottom, var(--color-1), var(--color-2));
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-4);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+// container for all the pages in the dashboard
+.dashboard-page-container {
+  width: calc(100% - var(--sidebar-width));
+  position: absolute;
+  top: 0;
+  left: var(--sidebar-width);
+
+  // this is where all the pages gets rendered
+  &__content {
+    padding: 3rem;
+  }
+}
+
+// normal button
+.btn {
+  text-decoration: none;
+  background-color: var(--color-1);
+  display: inline-block;
+  padding: 1rem 3rem;
+  color: var(--color-4);
+  border-radius: 2px;
+  transition: background-color .3s;
+
+  &:hover {
+    background-color: var(--color-2);
+  }
+}
